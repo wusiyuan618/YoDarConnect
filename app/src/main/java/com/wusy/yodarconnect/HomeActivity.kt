@@ -33,10 +33,12 @@ class HomeActivity : Activity() {
             yodarAPI?.getHostInfo()
         }
         btn_getTableList.setOnClickListener {
-            yodarAPI?.getMusicList(0,0)
+//            yodarAPI?.getMusicList(0,0)
+            yodarAPI?.requestPlayerInfo()
         }
+
         btn_getMusicList.setOnClickListener {
-            yodarAPI?.getMusicList(1,0)
+            yodarAPI?.getMusicList(2,0)
 
         }
         btn_tableUp.setOnClickListener {

@@ -1,12 +1,12 @@
-package com.wusy.yodarconnect;
+package com.wusy.yodarconnect.bean;
 
 import java.util.List;
 
-public class TableBean {
+public class MusicBean {
 
     /**
      * ack : list.dirNodeList
-     * arg : {"begin":0,"id":0,"nodeList":[{"id":1,"name":"SD(mmcblk0p1)","type":1}],"source":0,"total":1}
+     * arg : {"begin":0,"id":1,"nodeList":[{"album":"mmcblk0p1","id":0,"name":"DJ Okawari - Flower Dance"},{"album":"mmcblk0p1","id":1,"name":"Elvins.J - HearthRock聽(鎽囨粴鐗堢倝鐭充紶璇翠富棰樻洸)"},{"album":"mmcblk0p1","id":2,"name":"FIELD OF VIEW - DAN DAN 蹇冮瓍銇嬨倢銇︺亸"},{"album":"mmcblk0p1","id":3,"name":"John The Whistler - Wild Wild Web"},{"album":"mmcblk0p1","id":4,"name":"Linked Horizon - 蹇冭嚀銈掓崸銇掋倛!"},{"album":"mmcblk0p1","id":5,"name":"Mark Petrie - Go Time"}],"source":0,"total":22}
      */
 
     private String ack;
@@ -31,10 +31,10 @@ public class TableBean {
     public static class ArgBean {
         /**
          * begin : 0
-         * id : 0
-         * nodeList : [{"id":1,"name":"SD(mmcblk0p1)","type":1}]
+         * id : 1
+         * nodeList : [{"album":"mmcblk0p1","id":0,"name":"DJ Okawari - Flower Dance"},{"album":"mmcblk0p1","id":1,"name":"Elvins.J - HearthRock聽(鎽囨粴鐗堢倝鐭充紶璇翠富棰樻洸)"},{"album":"mmcblk0p1","id":2,"name":"FIELD OF VIEW - DAN DAN 蹇冮瓍銇嬨倢銇︺亸"},{"album":"mmcblk0p1","id":3,"name":"John The Whistler - Wild Wild Web"},{"album":"mmcblk0p1","id":4,"name":"Linked Horizon - 蹇冭嚀銈掓崸銇掋倛!"},{"album":"mmcblk0p1","id":5,"name":"Mark Petrie - Go Time"}]
          * source : 0
-         * total : 1
+         * total : 22
          */
 
         private int begin;
@@ -85,14 +85,22 @@ public class TableBean {
 
         public static class NodeListBean {
             /**
-             * id : 1
-             * name : SD(mmcblk0p1)
-             * type : 1
+             * album : mmcblk0p1
+             * id : 0
+             * name : DJ Okawari - Flower Dance
              */
 
+            private String album;
             private int id;
             private String name;
-            private int type;
+
+            public String getAlbum() {
+                return album;
+            }
+
+            public void setAlbum(String album) {
+                this.album = album;
+            }
 
             public int getId() {
                 return id;
@@ -108,14 +116,6 @@ public class TableBean {
 
             public void setName(String name) {
                 this.name = name;
-            }
-
-            public int getType() {
-                return type;
-            }
-
-            public void setType(int type) {
-                this.type = type;
             }
         }
     }

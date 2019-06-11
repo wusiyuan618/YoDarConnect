@@ -1,8 +1,5 @@
 package com.wusy.yodarconnect;
 
-import java.io.IOException;
-import java.util.Map;
-
 public interface IYodarApi {
     /**
      * 获取主机信息
@@ -81,9 +78,27 @@ public interface IYodarApi {
     /**
      * 获取SDK歌单
      */
-    void getMusicList(int id,int begin);
+    void getMusicList(int id, int begin, int size);
     /**
      * 播放指定音乐
      */
-    void requestPlayMusic(int albumId,int id);
+    void requestPlayMusic(int albumId, int id);
+    /**
+     * 获取当前播放的音乐信息
+     */
+    void requestPlayerInfo();
+    /**
+     * 音量设置
+     */
+    void setVoiceSize(int size);
+    /**
+     * 当前音乐播放时间设置
+     */
+    void setMusicTime(int second);
+    /**
+     * 音源设置
+     * 0x0b MP3
+     * 0x0f 云音乐
+     */
+    void setMusicSource(byte source);
 }

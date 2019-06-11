@@ -1,12 +1,12 @@
-package com.wusy.yodarconnect;
+package com.wusy.yodarconnect.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class MusicBean {
-
+public class TableBean implements Serializable {
     /**
      * ack : list.dirNodeList
-     * arg : {"begin":0,"id":1,"nodeList":[{"album":"mmcblk0p1","id":0,"name":"DJ Okawari - Flower Dance"},{"album":"mmcblk0p1","id":1,"name":"Elvins.J - HearthRock聽(鎽囨粴鐗堢倝鐭充紶璇翠富棰樻洸)"},{"album":"mmcblk0p1","id":2,"name":"FIELD OF VIEW - DAN DAN 蹇冮瓍銇嬨倢銇︺亸"},{"album":"mmcblk0p1","id":3,"name":"John The Whistler - Wild Wild Web"},{"album":"mmcblk0p1","id":4,"name":"Linked Horizon - 蹇冭嚀銈掓崸銇掋倛!"},{"album":"mmcblk0p1","id":5,"name":"Mark Petrie - Go Time"}],"source":0,"total":22}
+     * arg : {"begin":0,"id":0,"nodeList":[{"id":1,"name":"新歌","type":1},{"id":2,"name":"排行榜","type":1},{"id":3,"name":"电台","type":1},{"id":4,"name":"歌单","type":1},{"id":5,"name":"分类","type":1},{"id":6,"name":"歌手","type":1}],"source":5,"total":8}
      */
 
     private String ack;
@@ -28,13 +28,13 @@ public class MusicBean {
         this.arg = arg;
     }
 
-    public static class ArgBean {
+    public static class ArgBean implements Serializable {
         /**
          * begin : 0
-         * id : 1
-         * nodeList : [{"album":"mmcblk0p1","id":0,"name":"DJ Okawari - Flower Dance"},{"album":"mmcblk0p1","id":1,"name":"Elvins.J - HearthRock聽(鎽囨粴鐗堢倝鐭充紶璇翠富棰樻洸)"},{"album":"mmcblk0p1","id":2,"name":"FIELD OF VIEW - DAN DAN 蹇冮瓍銇嬨倢銇︺亸"},{"album":"mmcblk0p1","id":3,"name":"John The Whistler - Wild Wild Web"},{"album":"mmcblk0p1","id":4,"name":"Linked Horizon - 蹇冭嚀銈掓崸銇掋倛!"},{"album":"mmcblk0p1","id":5,"name":"Mark Petrie - Go Time"}]
-         * source : 0
-         * total : 22
+         * id : 0
+         * nodeList : [{"id":1,"name":"新歌","type":1},{"id":2,"name":"排行榜","type":1},{"id":3,"name":"电台","type":1},{"id":4,"name":"歌单","type":1},{"id":5,"name":"分类","type":1},{"id":6,"name":"歌手","type":1}]
+         * source : 5
+         * total : 8
          */
 
         private int begin;
@@ -83,24 +83,18 @@ public class MusicBean {
             this.nodeList = nodeList;
         }
 
-        public static class NodeListBean {
+        public static class NodeListBean implements Serializable {
             /**
-             * album : mmcblk0p1
-             * id : 0
-             * name : DJ Okawari - Flower Dance
+             * id : 1
+             * name : 新歌
+             * type : 1
              */
 
-            private String album;
             private int id;
             private String name;
-
-            public String getAlbum() {
-                return album;
-            }
-
-            public void setAlbum(String album) {
-                this.album = album;
-            }
+            private int type;
+            private String picUrl;
+            private String artist;
 
             public int getId() {
                 return id;
@@ -116,6 +110,30 @@ public class MusicBean {
 
             public void setName(String name) {
                 this.name = name;
+            }
+
+            public int getType() {
+                return type;
+            }
+
+            public void setType(int type) {
+                this.type = type;
+            }
+
+            public String getPicUrl() {
+                return picUrl;
+            }
+
+            public void setPicUrl(String picUrl) {
+                this.picUrl = picUrl;
+            }
+
+            public String getArtist() {
+                return artist;
+            }
+
+            public void setArtist(String artist) {
+                this.artist = artist;
             }
         }
     }
